@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TicketSystem.Models.Ticket>
+
+@{
+    ViewBag.Title = "TicketsList";
+}
+
+<h2>TicketsList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionOfProblem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionOfProblem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+        </td>
+
+    </tr>
+}
+
+</table>
